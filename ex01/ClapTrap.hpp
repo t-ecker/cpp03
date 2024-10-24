@@ -1,8 +1,6 @@
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include "ClapTrap.h"
-
 class ClapTrap
 {
     private:
@@ -22,10 +20,16 @@ class ClapTrap
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        
         std::string getName(void);
         int getHitpoints(void);
         int getAttackdamage(void);
         int getEnergypoints(void);
+
+        void setHitpoints(int amount);
+        void setAttackdamage(int amount);
+        void setEnergypoints(int amount);
+
         void info(void);
 };
 
