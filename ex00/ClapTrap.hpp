@@ -1,7 +1,8 @@
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include "ClapTrap.h"
+#include <string.h>
+#include <iostream>
 
 class ClapTrap
 {

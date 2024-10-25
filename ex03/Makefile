@@ -6,7 +6,7 @@
 #    By: tomecker <tomecker@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 12:19:12 by tecker            #+#    #+#              #
-#    Updated: 2024/10/25 14:41:47 by tomecker         ###   ########.fr        #
+#    Updated: 2024/10/25 16:35:46 by tomecker         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ CFLAGS			=	-Wall -Werror -Wextra -std=c++17
 
 SRC_FILES		=	main.cpp \
 					ClapTrap.cpp \
-					ScavTrap.cpp
+					ScavTrap.cpp \
+					FragTrap.cpp \
+					DiamondTrap.cpp
 
 OBJ_DIR			=	./obj
 
