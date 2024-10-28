@@ -8,7 +8,8 @@ DiamondTrap::~DiamondTrap()
 {
     std::cout << "(DiamondTrap) Destructor called" << std::endl;
 }
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name("no-name")
+DiamondTrap::DiamondTrap() 
+    : ClapTrap(), _name("no-name")
 {
 	setHitpoints(FragTrap::getHitpoints());
 	setAttackdamage(FragTrap::getAttackdamage());
@@ -16,7 +17,7 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name("no-name"
     std::cout << "(DiamondTrap) Default constructor called" << std::endl;
 }
 DiamondTrap::DiamondTrap(std::string name)
-	: ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
+	: ClapTrap(name + "_clap_name"), _name(name)
 {
 	setHitpoints(FragTrap::getHitpoints());
 	setAttackdamage(FragTrap::getAttackdamage());
@@ -26,7 +27,7 @@ DiamondTrap::DiamondTrap(std::string name)
 DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src)
 {
     *this = src;
-    std::cout << "(SvavTrap) Copy constructor called" << std::endl;
+    std::cout << "(DiamondTrap) Copy constructor called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
@@ -34,6 +35,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
     std::cout << "(DiamondTrap) Copy assignment operator called" << std::endl;
     if (this != &src)
     {
+        _name = src.get_dia_name();
         setName(src.getName());
         setHitpoints(src.getHitpoints());
         setEnergypoints(src.getEnergypoints());
@@ -44,7 +46,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 
 void DiamondTrap::whoAmI(void)
 {
-    std::cout << "DiamondTrap name: " << _name << " ClapTrap name: " << ClapTrap::getName() << "\n" << std::endl;
+    std::cout << "DiamondTrap name: " << _name << " | ClapTrap name: " << ClapTrap::getName() << "\n" << std::endl;
 }
 
 void DiamondTrap::info(void)
@@ -55,4 +57,9 @@ void DiamondTrap::info(void)
     std::cout << "energy points: " << getEnergypoints() << std::endl;
     std::cout << "attack damage: " << getAttackdamage() << std::endl;
     std::cout << std::endl;
+}
+
+std::string DiamondTrap::get_dia_name(void) const
+{
+    return (this->_name);
 }

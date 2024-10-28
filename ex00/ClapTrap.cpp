@@ -18,7 +18,7 @@ ClapTrap::~ClapTrap()
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
-    :   _name(src._name), _hit_points(src._hit_points), _energy_points(src._energy_points), _attack_damage(src._attack_damage)
+    :   _name(src.getName()), _hit_points(src.getHitpoints()), _energy_points(src.getEnergypoints()), _attack_damage(src.getAttackdamage())
 {
     std::cout << "Copy constructor called" << std::endl;
 }   
@@ -28,10 +28,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &src)
     {
-        _name = src._name;
-        _hit_points = src._hit_points;
-        _energy_points = src._energy_points;
-        _attack_damage = src._attack_damage;
+        _name = src.getName();
+        _hit_points = src.getHitpoints();
+        _energy_points = src.getEnergypoints();
+        _attack_damage = src.getAttackdamage();
     }
     return (*this);
 }
@@ -74,19 +74,19 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
 }
 
-std::string ClapTrap::getName(void)
+std::string ClapTrap::getName(void) const
 {
     return (_name);
 }
-int ClapTrap::getHitpoints(void)
+int ClapTrap::getHitpoints(void) const
 {
     return (_hit_points);
 }
-int ClapTrap::getAttackdamage(void)
+int ClapTrap::getAttackdamage(void) const
 {
     return (_attack_damage);
 }
-int ClapTrap::getEnergypoints(void)
+int ClapTrap::getEnergypoints(void) const
 {
     return (_energy_points);
 }

@@ -18,7 +18,7 @@ ClapTrap::~ClapTrap()
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
-    :   _name(src._name), _hit_points(src._hit_points), _energy_points(src._energy_points), _attack_damage(src._attack_damage)
+    :   _name(src.getName()), _hit_points(src.getHitpoints()), _energy_points(src.getEnergypoints()), _attack_damage(src.getAttackdamage())
 {
     std::cout << "(ClapTrap) Copy constructor called" << std::endl;
 }   
@@ -28,10 +28,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
     std::cout << "(ClapTrap) Copy assignment operator called" << std::endl;
     if (this != &src)
     {
-        _name = src._name;
-        _hit_points = src._hit_points;
-        _energy_points = src._energy_points;
-        _attack_damage = src._attack_damage;
+        _name = src.getName();
+        _hit_points = src.getHitpoints();
+        _energy_points = src.getEnergypoints();
+        _attack_damage = src.getAttackdamage();
     }
     return (*this);
 }

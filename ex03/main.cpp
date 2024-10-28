@@ -2,14 +2,14 @@
 
 int main(void)
 {
-    DiamondTrap diamond = DiamondTrap();
+    DiamondTrap diamond("dia");
     diamond.info();
     diamond.whoAmI();
-    DiamondTrap diamond2 = DiamondTrap("dia2");
+    DiamondTrap diamond2("dia2");
     diamond2.info();
     diamond2.whoAmI();
 
-    diamond.attack("Diamond2");
+    diamond.attack("dia2");
     diamond2.takeDamage(diamond.getAttackdamage());
     diamond.info();
     diamond2.info();
@@ -21,3 +21,20 @@ int main(void)
     diamond2.guardGate();
     std::cout << std::endl;
 }
+
+    //     Correct:                
+     
+    //         C
+    //        / \
+    //    (v)S   F(v)  
+    //        \ /
+    //         D
+
+    //     Wrong:
+
+    //     C     C
+    //     |     |
+    //     F     S
+    //     \     /
+    //      \   /
+    //        D
